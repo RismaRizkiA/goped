@@ -27,15 +27,6 @@
                         <td class="align-middle">{{ $rs->lokasi_pengambilan }}</td>
                         <td class="align-middle">{{ $rs->waktu_pengambilan }}</td>
                         <td class="align-middle">
-                            <!-- <div class="btn-group" role="group" aria-label="Basic example">
-                                <a href="{{ route('jual_sampahs.show', $rs->id) }}" type="button" class="btn btn-secondary">Detail</a>
-                                <a href="{{ route('jual_sampahs.edit', $rs->id)}}" type="button" class="btn btn-warning">Edit</a>
-                                <form action="{{ route('jual_sampahs.destroy', $rs->id) }}" method="POST" type="button" class="btn btn-danger p-0" onsubmit="return confirm('Delete?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="btn btn-danger m-0">Delete</button>
-                                </form>
-                            </div> -->
                         </td>
                     </tr>
                 @endforeach
