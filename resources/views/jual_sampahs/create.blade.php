@@ -6,11 +6,20 @@
     <h1 class="mb-0"></h1>
     <hr />
     <form action="{{ route('jual_sampahs.store') }}" method="POST" enctype="multipart/form-data">
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
         @csrf
         <div class="row mb-3">
         <div class="col">
         <!-- <label for="inputState" class="form-label">State</label> -->
-        <select id="jenis_sampah" name="jenis_sampah" class="form-select form-control">
+        <select id="jenis_sampah" name="jenis_sampah" class="form-select form-control" required>
             <option selected>Pilih Jenis Sampah</option>
             <option value="Sampah Plastik">Sampah Plastik</option>
             <option value="Sampah Kertas">Sampah Kertas</option>
@@ -19,12 +28,12 @@
         </select>
         </div>
             <div class="col">
-                <input type="text" name="lokasi_pengambilan" class="form-control" placeholder="Lokasi Pengambilan">
+                <input type="text" name="lokasi_pengambilan" class="form-control" placeholder="Lokasi Pengambilan" required>
             </div>
         </div>
         <div class="row mb-3">
         <div class="col">
-        <select id="waktu_pengambilan" name="waktu_pengambilan" class="form-select form-control mb-3">
+        <select id="waktu_pengambilan" name="waktu_pengambilan" class="form-select form-control mb-3" required>
             <option selected>Pilih Waktu Pengambilan</option>
             <option value="09:00 - 10:00">09:00 - 10:00</option>
             <option value="11:00 - 12:00">11:00 - 12:00</option>
